@@ -2,7 +2,7 @@
   <ItemGroup>
     <ProjectReference Include="..\WinFormsApp1\WinFormsApp1.csproj" />
     <ProjectReference Include="..\WinFormsApp2\WinFormsApp2.csproj">
-      <TargetFrameworks>net8.0-windows</TargetFrameworks>
+      <SetTargetFramework>TargetFramework=net8.0-windows</SetTargetFramework>
     </ProjectReference>
   </ItemGroup>
 </Project>
