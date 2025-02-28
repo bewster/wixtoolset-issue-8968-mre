@@ -40,3 +40,19 @@ Build started at 20:54...
 ========== Build: 3 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
 ========== Build completed at 20:54 and took 10.477 seconds ==========
 ```
+
+## Workaround
+Do not rely on the Visual Studio IDE Reference Manager, instead edit the wixproj file directly.
+
+Use `SetTargetFramework` to select a specific framework from a multi-targeted SDK-stlye project.
+
+```
+<ItemGroup>
+  <ProjectReference Include="..\WinFormsApp1\WinFormsApp1.csproj" />
+  <ProjectReference Include="..\WinFormsApp2\WinFormsApp2.csproj">
+    <SetTargetFramework>TargetFramework=net8.0-windows</SetTargetFramework>
+  </ProjectReference>
+</ItemGroup>
+```
+
+This is based on guidance in https://github.com/dotnet/sdk/issues/2280.
